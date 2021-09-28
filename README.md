@@ -9,3 +9,6 @@ Images of the end result can be seen in `/img`.
 
 # Additional Setup
 In order to support this worker - you will require a KV keyspace and and an environment variable named `shared_secret` which you will recieve from Zoom to ensure the notification of Zoom status is legitimate and not a bad actor. Once you have named your KV keyspace, you can update the `.js` file to reflect your naming convention.
+
+# Demo
+https://api.mcnulty.network/v1/zoom
