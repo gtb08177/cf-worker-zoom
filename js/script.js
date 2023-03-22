@@ -68,15 +68,15 @@ async function handlePostRequest(event) {
             in_meeting = false
     }
 
-    await DoNotDisturbLight_KeySpace.put("in_meeting", in_meeting);
-    await DoNotDisturbLight_KeySpace.put("last_update", timestamp);
+    await ZoomMonitor_Keyspace.put("in_meeting", in_meeting);
+    await ZoomMonitor_Keyspace.put("last_update", timestamp);
 
     return new Response("Successful processed.", { status: 200 });
 }
 
 async function handleRequest(request) {
-    const status = await DoNotDisturbLight_KeySpace.get("in_meeting")
-    const last_update = await DoNotDisturbLight_KeySpace.get("last_update")
+    const status = await ZoomMonitor_Keyspace.get("in_meeting")
+    const last_update = await ZoomMonitor_Keyspace.get("last_update")
 
     if (status === null) {
         return new Response("Value not found", { status: 404 })
