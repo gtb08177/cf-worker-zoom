@@ -1,4 +1,11 @@
 terraform {
+  cloud {
+    organization = "gtb08177"
+
+    workspaces {
+      name = "cloudflare-zoom-monitor-workspace"
+    }
+  }
   required_providers {
     cloudflare = {
       source  = "cloudflare/cloudflare"

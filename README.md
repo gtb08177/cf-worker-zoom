@@ -12,6 +12,14 @@ Images of the end result can be seen in `/img`.
 <br/>
 
 ## Additional Setup
+Since this project's original conception, it has now been migrated to be deployed via Terraform Cloud.
+In order to start fresh with this project, you will require a `terraform init` followed by Terraform Cloud credentiasl to create a workspace to manage the deployment.
+Furthermore, you will require an Environment Variable which will be required to be set inside the Terraform Cloud UI for said workspace, named `CLOUDFLARE_API_TOKEN` in order to allow
+the execution.
+
+NB. MARK THE ENVIRONMENT VARIABLE AS SENSITIVE.
+
+## (legacy) Additional Setup
 In order to support this worker - you will require a KV keyspace and and an environment variable named `shared_secret` which you will recieve from Zoom to ensure the notification of Zoom status is legitimate and not a bad actor. Once you have named your KV keyspace, you can update the `.js` file to reflect your naming convention.
 
 <br/>
